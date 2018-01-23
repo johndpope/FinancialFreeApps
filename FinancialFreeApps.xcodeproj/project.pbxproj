@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		363D9A1B4DC73F94263C26B6 /* Pods_FinancialFreeAppsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF254FCD2FA5ED2BD05C9E4E /* Pods_FinancialFreeAppsUITests.framework */; };
+		4D22DCDF2017883600C10E01 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22DCDE2017883600C10E01 /* ChartViewModel.swift */; };
+		4D22DCE120179D4400C10E01 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22DCE020179D4400C10E01 /* UIKitExtensions.swift */; };
 		4D4645B320161C59006CF346 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4645B220161C59006CF346 /* AppDelegate.swift */; };
 		4D4645B520161C59006CF346 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4645B420161C59006CF346 /* ChartViewController.swift */; };
 		4D4645B720161C59006CF346 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4645B620161C59006CF346 /* DetailViewController.swift */; };
@@ -47,6 +49,8 @@
 		2670A551CB45806CD97FFF86 /* Pods-FinancialFreeAppsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialFreeAppsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinancialFreeAppsUITests/Pods-FinancialFreeAppsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C1FA2238FD6B5A86FA793DB /* Pods-FinancialFreeApps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialFreeApps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinancialFreeApps/Pods-FinancialFreeApps.debug.xcconfig"; sourceTree = "<group>"; };
 		3CE2F2B78EE4A8040DCB2977 /* Pods_FinancialFreeAppsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialFreeAppsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D22DCDE2017883600C10E01 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		4D22DCE020179D4400C10E01 /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		4D4645AF20161C59006CF346 /* FinancialFreeApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialFreeApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4645B220161C59006CF346 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D4645B420161C59006CF346 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
@@ -143,8 +147,10 @@
 				4D4645BB20161C59006CF346 /* Assets.xcassets */,
 				4D4645BD20161C59006CF346 /* LaunchScreen.storyboard */,
 				4D4645C020161C59006CF346 /* Info.plist */,
+				4D22DCDE2017883600C10E01 /* ChartViewModel.swift */,
 				4D4645E520164311006CF346 /* AppModel.swift */,
 				4D4645E720174617006CF346 /* Network.swift */,
+				4D22DCE020179D4400C10E01 /* UIKitExtensions.swift */,
 			);
 			path = FinancialFreeApps;
 			sourceTree = "<group>";
@@ -482,6 +488,8 @@
 				4D4645B520161C59006CF346 /* ChartViewController.swift in Sources */,
 				4D4645B320161C59006CF346 /* AppDelegate.swift in Sources */,
 				4D4645E620164311006CF346 /* AppModel.swift in Sources */,
+				4D22DCE120179D4400C10E01 /* UIKitExtensions.swift in Sources */,
+				4D22DCDF2017883600C10E01 /* ChartViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
