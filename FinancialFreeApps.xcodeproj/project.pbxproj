@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		363D9A1B4DC73F94263C26B6 /* Pods_FinancialFreeAppsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF254FCD2FA5ED2BD05C9E4E /* Pods_FinancialFreeAppsUITests.framework */; };
 		4D4645B320161C59006CF346 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4645B220161C59006CF346 /* AppDelegate.swift */; };
 		4D4645B520161C59006CF346 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4645B420161C59006CF346 /* MasterViewController.swift */; };
 		4D4645B720161C59006CF346 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4645B620161C59006CF346 /* DetailViewController.swift */; };
@@ -16,6 +17,10 @@
 		4D4645CA20161C59006CF346 /* FinancialFreeAppsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4645C920161C59006CF346 /* FinancialFreeAppsTests.swift */; };
 		4D4645D520161C59006CF346 /* FinancialFreeAppsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4645D420161C59006CF346 /* FinancialFreeAppsUITests.swift */; };
 		4DC4B33720171463001D4D9B /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4B33620171463001D4D9B /* ChartTableViewCell.swift */; };
+		4D4645E320162EF2006CF346 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D4645E220162EF2006CF346 /* Podfile */; };
+		4D4645E620164311006CF346 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4645E520164311006CF346 /* AppModel.swift */; };
+		7B17CE74FFE88D36C491E16B /* Pods_FinancialFreeApps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7765AF0ABB945146907AF9E7 /* Pods_FinancialFreeApps.framework */; };
+		998B08C22DB3DA84354A72B2 /* Pods_FinancialFreeAppsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE2F2B78EE4A8040DCB2977 /* Pods_FinancialFreeAppsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D0ABDE482757C85D3806BA2 /* Pods-FinancialFreeAppsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialFreeAppsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinancialFreeAppsTests/Pods-FinancialFreeAppsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1CF125DC243746A016A3E2E4 /* Pods-FinancialFreeAppsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialFreeAppsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinancialFreeAppsTests/Pods-FinancialFreeAppsTests.release.xcconfig"; sourceTree = "<group>"; };
+		2670A551CB45806CD97FFF86 /* Pods-FinancialFreeAppsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialFreeAppsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinancialFreeAppsUITests/Pods-FinancialFreeAppsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3C1FA2238FD6B5A86FA793DB /* Pods-FinancialFreeApps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialFreeApps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinancialFreeApps/Pods-FinancialFreeApps.debug.xcconfig"; sourceTree = "<group>"; };
+		3CE2F2B78EE4A8040DCB2977 /* Pods_FinancialFreeAppsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialFreeAppsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4645AF20161C59006CF346 /* FinancialFreeApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialFreeApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4645B220161C59006CF346 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D4645B420161C59006CF346 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +61,12 @@
 		4D4645D420161C59006CF346 /* FinancialFreeAppsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialFreeAppsUITests.swift; sourceTree = "<group>"; };
 		4D4645D620161C59006CF346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DC4B33620171463001D4D9B /* ChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
+		4D4645E220162EF2006CF346 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		4D4645E520164311006CF346 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		7765AF0ABB945146907AF9E7 /* Pods_FinancialFreeApps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialFreeApps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8BE6B05820695F190DE091A /* Pods-FinancialFreeAppsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialFreeAppsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinancialFreeAppsUITests/Pods-FinancialFreeAppsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CA99BE091AAD1B2D4A73096C /* Pods-FinancialFreeApps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialFreeApps.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinancialFreeApps/Pods-FinancialFreeApps.release.xcconfig"; sourceTree = "<group>"; };
+		EF254FCD2FA5ED2BD05C9E4E /* Pods_FinancialFreeAppsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialFreeAppsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B17CE74FFE88D36C491E16B /* Pods_FinancialFreeApps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				998B08C22DB3DA84354A72B2 /* Pods_FinancialFreeAppsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +90,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				363D9A1B4DC73F94263C26B6 /* Pods_FinancialFreeAppsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BAD376B3C2A38E11DD081AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7765AF0ABB945146907AF9E7 /* Pods_FinancialFreeApps.framework */,
+				3CE2F2B78EE4A8040DCB2977 /* Pods_FinancialFreeAppsTests.framework */,
+				EF254FCD2FA5ED2BD05C9E4E /* Pods_FinancialFreeAppsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4D4645A620161C58006CF346 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +114,9 @@
 				4D4645C820161C59006CF346 /* FinancialFreeAppsTests */,
 				4D4645D320161C59006CF346 /* FinancialFreeAppsUITests */,
 				4D4645B020161C59006CF346 /* Products */,
+				4D4645E220162EF2006CF346 /* Podfile */,
+				96BA0242D6C80C5CDB42AA1C /* Pods */,
+				1BAD376B3C2A38E11DD081AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +141,7 @@
 				4D4645BD20161C59006CF346 /* LaunchScreen.storyboard */,
 				4D4645C020161C59006CF346 /* Info.plist */,
 				4DC4B33620171463001D4D9B /* ChartTableViewCell.swift */,
+				4D4645E520164311006CF346 /* AppModel.swift */,
 			);
 			path = FinancialFreeApps;
 			sourceTree = "<group>";
@@ -131,6 +164,19 @@
 			path = FinancialFreeAppsUITests;
 			sourceTree = "<group>";
 		};
+		96BA0242D6C80C5CDB42AA1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C1FA2238FD6B5A86FA793DB /* Pods-FinancialFreeApps.debug.xcconfig */,
+				CA99BE091AAD1B2D4A73096C /* Pods-FinancialFreeApps.release.xcconfig */,
+				0D0ABDE482757C85D3806BA2 /* Pods-FinancialFreeAppsTests.debug.xcconfig */,
+				1CF125DC243746A016A3E2E4 /* Pods-FinancialFreeAppsTests.release.xcconfig */,
+				2670A551CB45806CD97FFF86 /* Pods-FinancialFreeAppsUITests.debug.xcconfig */,
+				A8BE6B05820695F190DE091A /* Pods-FinancialFreeAppsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +184,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D4645D920161C59006CF346 /* Build configuration list for PBXNativeTarget "FinancialFreeApps" */;
 			buildPhases = (
+				81C0F4A3F5848CD1BD1A5863 /* [CP] Check Pods Manifest.lock */,
 				4D4645AB20161C59006CF346 /* Sources */,
 				4D4645AC20161C59006CF346 /* Frameworks */,
 				4D4645AD20161C59006CF346 /* Resources */,
+				2C79AA5113D7265674AD2D37 /* [CP] Embed Pods Frameworks */,
+				0A363CE83E253704F0D6D701 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D4645DC20161C59006CF346 /* Build configuration list for PBXNativeTarget "FinancialFreeAppsTests" */;
 			buildPhases = (
+				2E28B19C700D47181172F221 /* [CP] Check Pods Manifest.lock */,
 				4D4645C120161C59006CF346 /* Sources */,
 				4D4645C220161C59006CF346 /* Frameworks */,
 				4D4645C320161C59006CF346 /* Resources */,
+				5DAD566E46F4E4A985A673D9 /* [CP] Embed Pods Frameworks */,
+				7D4AB16A47893362DD81F3CB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D4645DF20161C59006CF346 /* Build configuration list for PBXNativeTarget "FinancialFreeAppsUITests" */;
 			buildPhases = (
+				1AB387BCD430448271667699 /* [CP] Check Pods Manifest.lock */,
 				4D4645CC20161C59006CF346 /* Sources */,
 				4D4645CD20161C59006CF346 /* Frameworks */,
 				4D4645CE20161C59006CF346 /* Resources */,
+				85E11B0DA95CCA13B0172457 /* [CP] Embed Pods Frameworks */,
+				C315B0AF8BD0EDB13D28EB6B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,6 +295,7 @@
 			files = (
 				4D4645BF20161C59006CF346 /* LaunchScreen.storyboard in Resources */,
 				4D4645BC20161C59006CF346 /* Assets.xcassets in Resources */,
+				4D4645E320162EF2006CF346 /* Podfile in Resources */,
 				4D4645BA20161C59006CF346 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +316,158 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A363CE83E253704F0D6D701 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinancialFreeApps/Pods-FinancialFreeApps-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1AB387BCD430448271667699 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FinancialFreeAppsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C79AA5113D7265674AD2D37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FinancialFreeApps/Pods-FinancialFreeApps-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinancialFreeApps/Pods-FinancialFreeApps-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E28B19C700D47181172F221 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FinancialFreeAppsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DAD566E46F4E4A985A673D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinancialFreeAppsTests/Pods-FinancialFreeAppsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D4AB16A47893362DD81F3CB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinancialFreeAppsTests/Pods-FinancialFreeAppsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81C0F4A3F5848CD1BD1A5863 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FinancialFreeApps-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85E11B0DA95CCA13B0172457 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinancialFreeAppsUITests/Pods-FinancialFreeAppsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C315B0AF8BD0EDB13D28EB6B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinancialFreeAppsUITests/Pods-FinancialFreeAppsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4D4645AB20161C59006CF346 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -269,6 +477,7 @@
 				4D4645B720161C59006CF346 /* DetailViewController.swift in Sources */,
 				4D4645B520161C59006CF346 /* MasterViewController.swift in Sources */,
 				4D4645B320161C59006CF346 /* AppDelegate.swift in Sources */,
+				4D4645E620164311006CF346 /* AppModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,14 +641,17 @@
 		};
 		4D4645DA20161C59006CF346 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C1FA2238FD6B5A86FA793DB /* Pods-FinancialFreeApps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C6PTPK3M7B;
 				INFOPLIST_FILE = FinancialFreeApps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.samuel.TopFreeFinanceApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -447,14 +659,17 @@
 		};
 		4D4645DB20161C59006CF346 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA99BE091AAD1B2D4A73096C /* Pods-FinancialFreeApps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C6PTPK3M7B;
 				INFOPLIST_FILE = FinancialFreeApps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.samuel.TopFreeFinanceApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -462,6 +677,7 @@
 		};
 		4D4645DD20161C59006CF346 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0ABDE482757C85D3806BA2 /* Pods-FinancialFreeAppsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -479,6 +695,7 @@
 		};
 		4D4645DE20161C59006CF346 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CF125DC243746A016A3E2E4 /* Pods-FinancialFreeAppsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -496,6 +713,7 @@
 		};
 		4D4645E020161C59006CF346 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2670A551CB45806CD97FFF86 /* Pods-FinancialFreeAppsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -512,6 +730,7 @@
 		};
 		4D4645E120161C59006CF346 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8BE6B05820695F190DE091A /* Pods-FinancialFreeAppsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
