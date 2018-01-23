@@ -11,5 +11,5 @@ import Foundation
 struct AppModel {
     let name: String
     let iconUrl: String
-    let downloadUrl: String
+    let link: String
 }

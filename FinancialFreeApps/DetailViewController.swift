@@ -27,6 +27,10 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
