@@ -15,6 +15,7 @@
 		4D4645BF20161C59006CF346 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4645BD20161C59006CF346 /* LaunchScreen.storyboard */; };
 		4D4645CA20161C59006CF346 /* FinancialFreeAppsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4645C920161C59006CF346 /* FinancialFreeAppsTests.swift */; };
 		4D4645D520161C59006CF346 /* FinancialFreeAppsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4645D420161C59006CF346 /* FinancialFreeAppsUITests.swift */; };
+		4DC4B33720171463001D4D9B /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4B33620171463001D4D9B /* ChartTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		4D4645D020161C59006CF346 /* FinancialFreeAppsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinancialFreeAppsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4645D420161C59006CF346 /* FinancialFreeAppsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialFreeAppsUITests.swift; sourceTree = "<group>"; };
 		4D4645D620161C59006CF346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DC4B33620171463001D4D9B /* ChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				4D4645BB20161C59006CF346 /* Assets.xcassets */,
 				4D4645BD20161C59006CF346 /* LaunchScreen.storyboard */,
 				4D4645C020161C59006CF346 /* Info.plist */,
+				4DC4B33620171463001D4D9B /* ChartTableViewCell.swift */,
 			);
 			path = FinancialFreeApps;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DC4B33720171463001D4D9B /* ChartTableViewCell.swift in Sources */,
 				4D4645B720161C59006CF346 /* DetailViewController.swift in Sources */,
 				4D4645B520161C59006CF346 /* MasterViewController.swift in Sources */,
 				4D4645B320161C59006CF346 /* AppDelegate.swift in Sources */,
@@ -431,10 +435,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T8Y827687H;
+				DEVELOPMENT_TEAM = C6PTPK3M7B;
 				INFOPLIST_FILE = FinancialFreeApps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samuel.FinancialFreeApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samuel.TopFreeFinanceApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -446,10 +450,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T8Y827687H;
+				DEVELOPMENT_TEAM = C6PTPK3M7B;
 				INFOPLIST_FILE = FinancialFreeApps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samuel.FinancialFreeApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samuel.TopFreeFinanceApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
