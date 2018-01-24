@@ -27,12 +27,6 @@ class ChartViewController: UITableViewController, Loggable {
     
     var detailViewController: DetailViewController? = nil
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        defer { self.viewModel = AppModelList() }
-        logd(debugMessage: "ChartView init ends")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -22,6 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
         
+        iTunesAPI.topFreeFinanceApps.request(params: nil) { (data) in
+            guard let json = try? JSON(data: data) else {
+                return
+            }
+            let models = AppModel.models(from: json)
+            let viewModel = AppModelList(apps: models)
+            let view = (splitViewController.viewControllers[0] as? UINavigationController)?.topViewController as? ChartViewController
+            view?.viewModel = viewModel
+        }
         return true
     }
 
