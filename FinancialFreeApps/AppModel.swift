@@ -10,17 +10,19 @@ import Foundation
 import SwiftyJSON
 
 struct AppModel {
+    let id: Int
     let name: String
-    let iconUrl: String
-    let link: String
+    let iconUrl: URL
+    let link: URL
     
     static func models(from json: JSON) -> [AppModel] {
         var apps: [AppModel] = []
         for item in json["feed"]["entry"].arrayValue {
+            let id = Int(item["id"]["attributes"]["im:id"].string!)!
             let name = item["im:name"]["label"].string!
-            let iconUrl = item["im:image"].arrayValue[2]["label"].string!
-            let link = item["link"]["attributes"]["href"].string!
-            apps.append(AppModel(name: name, iconUrl: iconUrl, link: link))
+            let iconUrl = URL(string: item["im:image"].arrayValue[2]["label"].string!)!
+            let link = URL(string: item["link"]["attributes"]["href"].string!)!
+            apps.append(AppModel(id: id, name: name, iconUrl: iconUrl, link: link))
         }
         return apps
     }

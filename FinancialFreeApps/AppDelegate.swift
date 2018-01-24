@@ -22,22 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
         
-        Network.asyncDataTask(with: "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json") { data, error in
-            if let _ = error {
-                return
-            }
-            guard let data = data else {
-                return
-            }
-            guard let json = try? JSON(data: data) else {
-                return
-            }
-            let models = AppModel.models(from: json)
-            let viewModel = AppModelList(apps: models)
-            let view = (splitViewController.viewControllers[0] as? UINavigationController)?.topViewController as? ChartViewController
-            view?.viewModel = viewModel
-        }
-        
         return true
     }
 

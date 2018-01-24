@@ -10,14 +10,14 @@ import UIKit
 
 class ChartTableViewCell: UITableViewCell {
 
-    var appLink: String?
+    var appLink: URL?
 
     @IBOutlet weak var appIcon: UIImageView!
     @IBOutlet weak var rank: UILabel!
     @IBOutlet weak var appName: UILabel!
     @IBOutlet weak var installButton: UIButton!
     @IBAction func didTapInstall(_ sender: Any) {
-        if let url = URL(string: self.appLink ?? "") {
+        if let url = self.appLink {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }

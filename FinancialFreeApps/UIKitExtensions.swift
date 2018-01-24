@@ -11,7 +11,7 @@ import UIKit
 import RxSwift
 
 extension UIImageView {
-    func setImage(from url:String, placeHolder:String) {
+    func setImage(from url: URL, placeHolder: String) {
         
         self.image = UIImage(named: "AppIconPlaceHolder")
         

@@ -7,25 +7,40 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 protocol ChartViewModel {
-    init(apps: [AppModel])
-    func app(forRow: Int) -> AppModel
-    func numberOfApps() -> Int
+    init()
+    var didModelUpdated: (() -> ())? { get set }
+    func app(forRow: Int) -> AppModel?
+    func numberOfApps() -> Int?
 }
 
-class AppModelList: ChartViewModel {
-    var apps: [AppModel]!
+class AppModelList: ChartViewModel, Loggable {
+    var apps: [AppModel]? {
+        didSet {
+            logd(debugMessage: "apps didSet")
+            self.didModelUpdated?()
+        }
+    }
 
-    required init(apps: [AppModel]) {
-        self.apps = apps
+    var didModelUpdated: (() -> ())?
+    
+    required init() {
+        iTunesAPI.topFreeFinanceApps.request(params: nil) { [weak self] (data) in
+            guard let json = try? JSON(data: data) else {
+                return
+            }
+            self?.apps = AppModel.models(from: json)
+        }
+        logd(debugMessage: "AppModelList init ends")
     }
     
-    func app(forRow index: Int) -> AppModel {
-        return apps[index]
+    func app(forRow index: Int) -> AppModel? {
+        return apps?[index]
     }
     
-    func numberOfApps() -> Int {
-        return apps.count
+    func numberOfApps() -> Int? {
+        return apps?.count
     }
 }

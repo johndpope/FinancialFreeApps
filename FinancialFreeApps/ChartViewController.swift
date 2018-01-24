@@ -9,13 +9,16 @@
 import UIKit
 import SwiftyJSON
 
-class ChartViewController: UITableViewController {
+class ChartViewController: UITableViewController, Loggable {
 
     var viewModel: ChartViewModel? {
         didSet {
-            DispatchQueue.main.async {
-                self.tableView?.reloadData()
-                self.activityIndicator.stopAnimating()
+            logd(debugMessage: "viewModel didSet")
+            viewModel?.didModelUpdated = { [weak self] in
+                DispatchQueue.main.async {
+                    self?.tableView?.reloadData()
+                    self?.activityIndicator.stopAnimating()
+                }
             }
         }
     }
@@ -24,6 +27,12 @@ class ChartViewController: UITableViewController {
     
     var detailViewController: DetailViewController? = nil
 
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        defer { self.viewModel = AppModelList() }
+        logd(debugMessage: "ChartView init ends")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,10 +62,10 @@ class ChartViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let app = viewModel?.app(forRow: indexPath.row)
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = app
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
+                let view = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                view.detailItem = app
+                view.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                view.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
