@@ -33,7 +33,10 @@ class ChartViewController: UITableViewController, Loggable {
         
         activityIndicator.startAnimating()
         DispatchQueue.global().async {
-            self.viewModel?.parseModel()
+            while (self.viewModel == nil) {
+                Thread.sleep(forTimeInterval: 0.001)
+            }
+            self.viewModel!.parseModel()
         }
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -61,7 +64,14 @@ class ChartViewController: UITableViewController, Loggable {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let app = viewModel?.item(forRow: indexPath.row)
                 let view = (segue.destination as! UINavigationController).topViewController as! AppDetailViewController
-                view.detailItem = app
+                
+                iTunesAPI.appDetails.request(params: ["id":"\(app?.id ?? 0)"], completionHandler: { (data) in
+                    guard let model = try? JSON(data: data) else {
+                        return
+                    }
+                    view.viewModel = AppDetailViewModel(model: model)
+                })
+                
                 view.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 view.navigationItem.leftItemsSupplementBackButton = true
             }

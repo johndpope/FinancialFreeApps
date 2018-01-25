@@ -7,17 +7,26 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class AppDetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
-
+    var viewModel: AppDetailViewModel? {
+        didSet {
+            // Update the view.
+            configureView()
+        }
+    }
+    
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = detailItem {
-            self.title = detail.name
-            
+        if let detailItem = viewModel?.detail {
+            DispatchQueue.main.async {
+                self.title = detailItem["trackName"].string
+                self.detailDescriptionLabel.text = detailItem["description"].string
+            }
         }
     }
 
@@ -36,12 +45,7 @@ class AppDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var detailItem: AppDetailViewModel? {
-        didSet {
-            // Update the view.
-            configureView()
-        }
-    }
+
 
 
 }

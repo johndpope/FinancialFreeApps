@@ -31,4 +31,12 @@ struct AppViewModel: ItemViewModel {
     }
 }
 
-typealias AppDetailViewModel = JSON
+struct AppDetailViewModel {
+    let model: JSON!
+    init(model: JSON) {
+        self.model = model
+    }
+    var detail: JSON {
+        return model["results"].arrayValue[0]
+    }
+}
