@@ -31,4 +31,4 @@ struct AppViewModel: ItemViewModel {
     }
 }
 
-typealias AppDetailModel = JSON
+typealias AppDetailViewModel = JSON

@@ -10,7 +10,6 @@
 		363D9A1B4DC73F94263C26B6 /* Pods_FinancialFreeAppsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF254FCD2FA5ED2BD05C9E4E /* Pods_FinancialFreeAppsUITests.framework */; };
 		4D22DCDF2017883600C10E01 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22DCDE2017883600C10E01 /* ChartViewModel.swift */; };
 		4D22DCE120179D4400C10E01 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22DCE020179D4400C10E01 /* UIKitExtensions.swift */; };
-		4D361253201A0E9700864C02 /* ViewModelOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D361252201A0E9700864C02 /* ViewModelOwner.swift */; };
 		4D4645B320161C59006CF346 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4645B220161C59006CF346 /* AppDelegate.swift */; };
 		4D4645B520161C59006CF346 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4645B420161C59006CF346 /* ChartViewController.swift */; };
 		4D4645B720161C59006CF346 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4645B620161C59006CF346 /* AppDetailViewController.swift */; };
@@ -54,7 +53,6 @@
 		3CE2F2B78EE4A8040DCB2977 /* Pods_FinancialFreeAppsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialFreeAppsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D22DCDE2017883600C10E01 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		4D22DCE020179D4400C10E01 /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
-		4D361252201A0E9700864C02 /* ViewModelOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelOwner.swift; sourceTree = "<group>"; };
 		4D4645AF20161C59006CF346 /* FinancialFreeApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialFreeApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4645B220161C59006CF346 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D4645B420161C59006CF346 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 				4D22DCE020179D4400C10E01 /* UIKitExtensions.swift */,
 				4D5C376A201858E400881422 /* iTunesAPI.swift */,
 				4D5C376D20187C1400881422 /* Loggable.swift */,
-				4D361252201A0E9700864C02 /* ViewModelOwner.swift */,
 			);
 			path = FinancialFreeApps;
 			sourceTree = "<group>";
@@ -501,7 +498,6 @@
 				4D22DCE120179D4400C10E01 /* UIKitExtensions.swift in Sources */,
 				4D5C376E20187C1400881422 /* Loggable.swift in Sources */,
 				4D22DCDF2017883600C10E01 /* ChartViewModel.swift in Sources */,
-				4D361253201A0E9700864C02 /* ViewModelOwner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

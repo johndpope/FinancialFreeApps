@@ -8,18 +8,19 @@
 
 import UIKit
 import SwiftyJSON
-import RxSwift
 
-class ChartViewController: UITableViewController, ReusableViewModelOwner, Loggable {
-    func didSetViewModel(viewModel: ChartViewModel?, disposeBag: DisposeBag) {
-        self.viewModel?.didModelUpdated = { [weak self] in
-            self?.logd(debugMessage: "didModelUpdated")
-            DispatchQueue.main.async {
-                self?.tableView?.reloadData()
-                self?.activityIndicator.stopAnimating()
+class ChartViewController: UITableViewController, Loggable {
+    var viewModel: ChartViewModel? {
+        didSet {
+            viewModel?.didModelUpdated = { [weak self] in
+                self?.logd(debugMessage: "didModelUpdated")
+                DispatchQueue.main.async {
+                    self?.tableView?.reloadData()
+                    self?.activityIndicator.stopAnimating()
+                }
             }
+            logd(debugMessage: "viewModel didSet")
         }
-        logd(debugMessage: "viewModel didSet")
     }
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
