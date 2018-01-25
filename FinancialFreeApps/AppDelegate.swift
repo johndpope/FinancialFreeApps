@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -14,12 +15,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     var window: UIWindow?
 
 
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+
+        let splitViewController = window!.rootViewController as! UISplitViewController
+
+        iTunesAPI.topFreeFinanceApps.request(params: nil) { (data) in
+            guard let model = try? JSON(data: data) else {
+                return
+            }
+            let viewModel = ChartViewModel(model: model)
+            let view = (splitViewController.viewControllers[0] as? UINavigationController)?.topViewController as? ChartViewController
+            view?.viewModel = viewModel
+        }
+        
+        return true
+    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let splitViewController = window!.rootViewController as! UISplitViewController
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
+        
         return true
     }
 
@@ -49,8 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-        guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
-        if topAsDetailController.detailItem == nil {
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? AppDetailViewController else { return false }
+        if topAsDetailController.viewModel == nil {
             // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
             return true
         }

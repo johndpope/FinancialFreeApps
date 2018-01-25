@@ -11,9 +11,11 @@ import Foundation
 struct Network {
     private init() {}
     
-    static func asyncDataTask(with urlString: String, completionHandler:@escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) {
-        if let url = URL(string: urlString) {
-            URLSession.shared.dataTask(with: url, completionHandler: completionHandler).resume()
+    static func asyncDataTask(with url: URL, completionHandler:((_ data: Data?, _ error: Error?) -> Void)?) {
+        DispatchQueue.global().async {
+            URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+                completionHandler?(data, error)
+            }).resume()
         }
     }
 }

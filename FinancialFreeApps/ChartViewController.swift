@@ -9,36 +9,40 @@
 import UIKit
 import SwiftyJSON
 
-class ChartViewController: UITableViewController {
-
-    var detailViewController: DetailViewController? = nil
-    var apps = [AppModel]()
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        Network.asyncDataTask(with: "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json") { [weak self] (data, response, error) in
-            guard let data = data else {
-                return
-            }
-            if let json = try? JSON(data: data) {
-                for item in json["feed"]["entry"].arrayValue {
-                    let name = item["im:name"]["label"].string!
-                    let iconUrl = item["im:image"].arrayValue[2]["label"].string!
-                    let link = item["link"]["attributes"]["href"].string!
-                    self?.apps.append(AppModel(name: name, iconUrl: iconUrl, link: link))
+class ChartViewController: UITableViewController, Loggable {
+    var viewModel: ChartViewModel? {
+        didSet {
+            viewModel?.didModelUpdated = { [weak self] in
+                self?.logd(debugMessage: "didModelUpdated")
+                DispatchQueue.main.async {
+                    self?.tableView?.reloadData()
+                    self?.activityIndicator.stopAnimating()
                 }
             }
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
+            logd(debugMessage: "viewModel didSet")
+        }
+    }
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var detailViewController: AppDetailViewController? = nil
+
+    override func viewDidLoad() {
+        logd(debugMessage: "viewDidLoad")
+        super.viewDidLoad()
+        
+        activityIndicator.startAnimating()
+        DispatchQueue.global().async {
+            while (self.viewModel == nil) {
+                Thread.sleep(forTimeInterval: 0.001)
             }
+            self.viewModel!.parseModel()
         }
         
         // Do any additional setup after loading the view, typically from a nib.
         if let split = splitViewController {
             let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? AppDetailViewController
         }
     }
 
@@ -58,11 +62,18 @@ class ChartViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let app = apps[indexPath.row]
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = app
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
+                let app = viewModel?.item(forRow: indexPath.row)
+                let view = (segue.destination as! UINavigationController).topViewController as! AppDetailViewController
+                
+                iTunesAPI.appDetails.request(params: ["id":"\(app?.id ?? 0)"], completionHandler: { (data) in
+                    guard let model = try? JSON(data: data) else {
+                        return
+                    }
+                    view.viewModel = AppDetailViewModel(model: model)
+                })
+                
+                view.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                view.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
@@ -74,24 +85,18 @@ class ChartViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return apps.count
+        return viewModel?.numberOfItems() ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ChartTableViewCell {
 
-            let app = apps[indexPath.row]
-            cell.rank.text = String(indexPath.row + 1)
-            cell.appName.text = app.name
-            Network.asyncDataTask(with: app.iconUrl, completionHandler: { (data, response, error) in
-                guard let data = data else {
-                    return
-                }
-                DispatchQueue.main.async {
-                    cell.appIcon.image = UIImage(data: data)
-                }
-            })
-            cell.appLink = app.link
+            if let app = viewModel?.item(forRow: indexPath.row) {
+                cell.rank.text = String(indexPath.row + 1)
+                cell.appName.text = app.name
+                cell.appIcon.setImage(from: app.iconUrl, placeHolder: "AppIconPlaceHolder")
+                cell.appLink = app.link
+            }
             
             return cell
         }
