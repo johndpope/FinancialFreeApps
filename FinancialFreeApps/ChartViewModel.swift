@@ -9,16 +9,17 @@
 import Foundation
 import SwiftyJSON
 
-protocol ChartViewModel {
-    var apps: [AppModel]? { get }
-    init(apps: [AppModel])
+protocol ListViewModel {
+    associatedtype ItemModel
+    var items: [ItemModel]? { get }
+    init(items: [ItemModel])
     var didModelUpdated: (() -> ())? { get set }
-    func app(forRow: Int) -> AppModel?
-    func numberOfApps() -> Int?
+    func item(forRow: Int) -> ItemModel?
+    func numberOfItems() -> Int?
 }
 
-class AppModelList: ChartViewModel, Loggable {
-    var apps: [AppModel]? {
+class ChartViewModel: ListViewModel, Loggable {
+    var items: [AppModel]? {
         didSet {
             logd(debugMessage: "apps didSet")
             self.didModelUpdated?()
@@ -27,16 +28,16 @@ class AppModelList: ChartViewModel, Loggable {
 
     var didModelUpdated: (() -> ())?
     
-    required init(apps: [AppModel]) {
-        defer { self.apps = apps }
-        logd(debugMessage: "AppModelList init ends")
+    required init(items: [AppModel]) {
+        defer { self.items = items }
+        logd(debugMessage: "ChartViewModel init ends")
     }
     
-    func app(forRow index: Int) -> AppModel? {
-        return apps?[index]
+    func item(forRow index: Int) -> AppModel? {
+        return items?[index]
     }
     
-    func numberOfApps() -> Int? {
-        return apps?.count
+    func numberOfItems() -> Int? {
+        return items?.count
     }
 }

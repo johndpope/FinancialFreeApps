@@ -8,24 +8,22 @@
 
 import UIKit
 import SwiftyJSON
+import RxSwift
 
-class ChartViewController: UITableViewController, Loggable {
-
-    var viewModel: ChartViewModel? {
-        didSet {
-            logd(debugMessage: "viewModel didSet")
-            viewModel?.didModelUpdated = { [weak self] in
-                DispatchQueue.main.async {
-                    self?.tableView?.reloadData()
-                    self?.activityIndicator.stopAnimating()
-                }
+class ChartViewController: UITableViewController, ReusableViewModelOwner, Loggable {
+    func didSetViewModel(viewModel: ChartViewModel?, disposeBag: DisposeBag) {
+        logd(debugMessage: "viewModel didSet")
+        self.viewModel?.didModelUpdated = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView?.reloadData()
+                self?.activityIndicator.stopAnimating()
             }
         }
     }
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var detailViewController: DetailViewController? = nil
+    var detailViewController: AppDetailViewController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +33,7 @@ class ChartViewController: UITableViewController, Loggable {
         // Do any additional setup after loading the view, typically from a nib.
         if let split = splitViewController {
             let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? AppDetailViewController
         }
     }
 
@@ -55,8 +53,8 @@ class ChartViewController: UITableViewController, Loggable {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let app = viewModel?.app(forRow: indexPath.row)
-                let view = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                let app = viewModel?.item(forRow: indexPath.row)
+                let view = (segue.destination as! UINavigationController).topViewController as! AppDetailViewController
                 view.detailItem = app
                 view.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 view.navigationItem.leftItemsSupplementBackButton = true
@@ -71,13 +69,13 @@ class ChartViewController: UITableViewController, Loggable {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.numberOfApps() ?? 0
+        return viewModel?.numberOfItems() ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ChartTableViewCell {
 
-            if let app = viewModel?.app(forRow: indexPath.row) {
+            if let app = viewModel?.item(forRow: indexPath.row) {
                 cell.rank.text = String(indexPath.row + 1)
                 cell.appName.text = app.name
                 cell.appIcon.setImage(from: app.iconUrl, placeHolder: "AppIconPlaceHolder")

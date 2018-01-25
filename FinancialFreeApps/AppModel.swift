@@ -9,7 +9,10 @@
 import Foundation
 import SwiftyJSON
 
-struct AppModel {
+protocol ItemViewModel {
+}
+
+struct AppModel: ItemViewModel {
     let id: Int
     let name: String
     let iconUrl: URL
@@ -27,3 +30,5 @@ struct AppModel {
         return apps
     }
 }
+
+typealias AppDetailModel = JSON

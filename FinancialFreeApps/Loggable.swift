@@ -28,9 +28,9 @@ extension Loggable {
     private func log(level: LogLevel, message: String?) {
         #if DEBUG
             if let message = message {
-                NSLog("[\(level.rawValue)] \(message)")
+                NSLog("[\(level.rawValue)] \(type(of: self)) - \(message)")
             } else {
-                NSLog("[\(level.rawValue)] nil")
+                NSLog("[\(level.rawValue)] \(type(of: self)) - nil")
             }
         #endif
     }
