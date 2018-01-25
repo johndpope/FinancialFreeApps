@@ -12,13 +12,14 @@ import RxSwift
 
 class ChartViewController: UITableViewController, ReusableViewModelOwner, Loggable {
     func didSetViewModel(viewModel: ChartViewModel?, disposeBag: DisposeBag) {
-        logd(debugMessage: "viewModel didSet")
         self.viewModel?.didModelUpdated = { [weak self] in
+            self?.logd(debugMessage: "didModelUpdated")
             DispatchQueue.main.async {
                 self?.tableView?.reloadData()
                 self?.activityIndicator.stopAnimating()
             }
         }
+        logd(debugMessage: "viewModel didSet")
     }
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -26,9 +27,13 @@ class ChartViewController: UITableViewController, ReusableViewModelOwner, Loggab
     var detailViewController: AppDetailViewController? = nil
 
     override func viewDidLoad() {
+        logd(debugMessage: "viewDidLoad")
         super.viewDidLoad()
         
         activityIndicator.startAnimating()
+        DispatchQueue.global().async {
+            self.viewModel?.parseModel()
+        }
         
         // Do any additional setup after loading the view, typically from a nib.
         if let split = splitViewController {

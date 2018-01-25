@@ -36,7 +36,7 @@ class AppDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var detailItem: AppModel? {
+    var detailItem: AppViewModel? {
         didSet {
             // Update the view.
             configureView()

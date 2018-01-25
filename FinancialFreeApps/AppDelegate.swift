@@ -15,6 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     var window: UIWindow?
 
 
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+
+        let splitViewController = window!.rootViewController as! UISplitViewController
+
+        iTunesAPI.topFreeFinanceApps.request(params: nil) { (data) in
+            guard let model = try? JSON(data: data) else {
+                return
+            }
+            let viewModel = ChartViewModel(model: model)
+            let view = (splitViewController.viewControllers[0] as? UINavigationController)?.topViewController as? ChartViewController
+            view?.viewModel = viewModel
+        }
+        
+        return true
+    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let splitViewController = window!.rootViewController as! UISplitViewController
@@ -22,15 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
         
-        iTunesAPI.topFreeFinanceApps.request(params: nil) { (data) in
-            guard let json = try? JSON(data: data) else {
-                return
-            }
-            let models = AppModel.models(from: json)
-            let viewModel = ChartViewModel(items: models)
-            let view = (splitViewController.viewControllers[0] as? UINavigationController)?.topViewController as? ChartViewController
-            view?.viewModel = viewModel
-        }
         return true
     }
 
